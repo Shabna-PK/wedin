@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Animation with Full-Screen Photo</title>
+  <style>
+   body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: url('wed 3.png') no-repeat center center fixed;
+  background-size: contain;
+  height: 100vh;
+}
+
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+
+    .button {
+      background-color: #163802;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      font-style: italic;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      margin-bottom: -86rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        top: 40%;
+      }
+
+      .button {
+        padding: 10px 20px;
+        font-size: 0.5rem;
+        margin-top: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        top: 45%;
+      }
+
+      .button {
+        padding: 9px 19px;
+        font-size: 1rem;
+        margin-top: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="button" onclick="navigateToNextPage()">Click me</button>
+  </div>
+
+  <script>
+    function navigateToNextPage() {
+      // Change 'login.html' to the actual filename of your next HTML page
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>

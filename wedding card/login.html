@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .bg, .bg1, .bg2 {
+      width: 100%;
+      min-height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .bg {
+      background-image: url('wed.png');
+    }
+
+    .bg1 {
+      background-image: url('wed 1.jpg');
+    }
+
+    .bg2 {
+      background-image: url('wed 2.jpg');
+    }
+
+    @media (max-width: 768px) {
+      .bg, .bg1, .bg2 {
+        min-height: 60%;
+      }
+    }
+
+    button {
+      background: transparent;
+      color: rgb(236, 253, 249);
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 10px;
+      margin-top: 20rem;
+      border: 2px solid #3eff37;
+    }
+
+    button.active {
+      background-color: yellow;
+      border: 2px solid yellow;
+      color: black;
+    }
+
+    .details {
+      display: none;
+      max-width: 400px;
+      margin: 10px auto;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(54, 46, 46, 0.1);
+      position: relative;
+    }
+
+    .details.active {
+      display: block;
+    }
+
+    .details.active::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      margin-left: -10px;
+      border-width: 10px 10px 0;
+      border-style: solid;
+      border-color: #fff transparent transparent transparent;
+    }
+
+    .details2.active {
+      border-color: yellow;
+      
+    }
+
+    .details2.active::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      margin-left: -10px;
+      border-width: 10px 10px 0;
+      border-style: solid;
+      border-color: yellow transparent transparent transparent;
+      
+    }
+
+    .details strong {
+      color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg"></div>
+  <div class="bg1">
+
+  <button onclick="toggleDetails('groom')" id="groomButton">Toggle Groom Details</button>
+  <button onclick="toggleDetails('bride')" id="brideButton">Toggle Bride Details</button>
+
+  <div id="groomDetails" class="details details2">
+    <strong style="color: rgb(75, 4, 39);font-style: italic;">MUHAMMED AFSAL</strong><br>
+    Mr. Alavikkutty (Said)  <br> Mrs. Safiya Said <br>
+    Thirundikkal (H) Munnurcode
+  </div>
+  <div id="brideDetails" class="details details1">
+    <strong>Bride:</strong> Your bride's details go here.
+  </div>
+  <marquee style="color: rgb(255, 253, 253);"> WE ARE GETTING MARRIED ON JANUARY 14 2024</marquee>
+
+  <script>
+    function toggleDetails(person) {
+      var groomDetails = document.getElementById('groomDetails');
+      var brideDetails = document.getElementById('brideDetails');
+      var groomButton = document.getElementById('groomButton');
+      var brideButton = document.getElementById('brideButton');
+
+      if (person === 'groom') {
+        groomDetails.classList.add('active');
+        brideDetails.classList.remove('active');
+        groomButton.classList.add('active');
+        brideButton.classList.remove('active');
+      } else if (person === 'bride') {
+        groomDetails.classList.remove('active');
+        brideDetails.classList.add('active');
+        groomButton.classList.remove('active');
+        brideButton.classList.add('active');
+      }
+    }
+  </script>
+
+</body>
+</html>
